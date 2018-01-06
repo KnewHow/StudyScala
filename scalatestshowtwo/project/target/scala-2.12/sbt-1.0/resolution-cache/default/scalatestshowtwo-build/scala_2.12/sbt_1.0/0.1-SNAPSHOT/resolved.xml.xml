@@ -4,7 +4,7 @@
 		module="scalatestshowtwo-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20180106165048"
+		publication="20180106185849"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
