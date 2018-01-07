@@ -1,0 +1,35 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/stdio_2.12-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	WriteStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/WriteStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MapStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/MapStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlatMapStdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/FlatMapStdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PureStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/PureStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PureStdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/PureStdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Show.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/Show.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MapStdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/MapStdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Show$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/Show$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	WriteStdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/WriteStdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ReadStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/ReadStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	StdIO$StdIOSynax.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/StdIO$StdIOSynax.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	StdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/StdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FlatMapStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/FlatMapStdIO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	StdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/StdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Show$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/Show$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ReadStdIO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /project/studyScala/workspace/scalaWorkspace/stdio/target/scala-2.12/classes/ReadStdIO$.class[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

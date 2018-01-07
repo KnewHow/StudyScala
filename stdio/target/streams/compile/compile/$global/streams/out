@@ -1,0 +1,21 @@
+[0m[[0m[31merror[0m] [0m[0m/project/studyScala/workspace/scalaWorkspace/stdio/src/main/scala/StdIO.scala:57:18: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("+")[0m
+[0m[[0m[31merror[0m] [0m[0m required: StdIO[String][0m
+[0m[[0m[31merror[0m] [0m[0m            case "+" => Try(l.toInt + r.toInt)[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/project/studyScala/workspace/scalaWorkspace/stdio/src/main/scala/StdIO.scala:58:18: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("-")[0m
+[0m[[0m[31merror[0m] [0m[0m required: StdIO[String][0m
+[0m[[0m[31merror[0m] [0m[0m            case "-" => Try(l.toInt - r.toInt)[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/project/studyScala/workspace/scalaWorkspace/stdio/src/main/scala/StdIO.scala:59:18: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("*")[0m
+[0m[[0m[31merror[0m] [0m[0m required: StdIO[String][0m
+[0m[[0m[31merror[0m] [0m[0m            case "*" => Try(l.toInt * r.toInt)[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/project/studyScala/workspace/scalaWorkspace/stdio/src/main/scala/StdIO.scala:60:18: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("/")[0m
+[0m[[0m[31merror[0m] [0m[0m required: StdIO[String][0m
+[0m[[0m[31merror[0m] [0m[0m            case "/" => Try(l.toInt / r.toInt)[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m

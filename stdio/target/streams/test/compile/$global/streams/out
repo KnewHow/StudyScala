@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/project/studyScala/workspace/scalaWorkspace/stdio/src/test/scala/Test.scala:7:10: No implicit view available from org.scalatest.compatible.Assertion => org.scalacheck.Prop.[0m
+[0m[[0m[31merror[0m] [0m[0m    check{(m:Int,n:Int) =>[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
