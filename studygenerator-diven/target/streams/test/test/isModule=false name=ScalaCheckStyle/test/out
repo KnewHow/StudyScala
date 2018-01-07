@@ -1,0 +1,10 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mScalaCheckStyle:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mLists[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should statisfy following *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  TestFailedException was thrown during property evaluation.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    Message: 0 was greater than or equal to 0, and 0 was greater than or equal to 0, but 0 was not less than 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    Location: (ShowScalaCheckStyle.scala:33)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    Occurred when passed generated values ([0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      arg0 = 0, // 31 shrinks[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      arg1 = 0 // 32 shrinks[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    )[0m[0m
