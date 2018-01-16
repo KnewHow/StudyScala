@@ -1,0 +1,7 @@
+#Routes
+
+#index page
+GET     /                           controllers.HomeController.index
+
+#person List
+GET     /person/personList                           controllers.PersonController.personList

@@ -1,0 +1,17 @@
+@(persons:Seq[Person])
+<table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>age</th>
+  </tr>
+
+  @for(p <- persons){
+    <tr>
+      <td>@p.id</td>
+      <td>@p.name</td>
+      <td>@p.age</td>
+    </tr>
+   }
+
+</table>
