@@ -1,0 +1,34 @@
+@(errors:Map[String,String])
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>register page</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+  </head>
+
+  <body>
+    <h1>Login Page</h1>
+    <span class="error-info">@errors.get("msg")</span>
+    <form method="POST" action="/user/doLogin.html">
+      <div class="login-form">
+        <div class="form-box">
+          <label class="basic-name">Username</label>
+          <input class="basic-input" type="text" name="username" value="@errors.get("username")" />
+          <span>
+            @errors.get("usernameError")
+          </span>
+        </div>
+        <div class="form-box">
+          <label class="basic-name">Password</label>
+          <input type="password" class="basic-input" name="password" value="@errors.get("password")" />
+          <span>
+            @errors.get("passwordError")
+          </span>
+        </div>
+        <div class="form-box">
+          <input class="basic-input" type="submit"  value="Login" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

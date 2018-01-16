@@ -1,0 +1,10 @@
+#public resource
+play.assets {
+  path = "/public"
+  urlPrefix = "/assets"
+}
+#disable some defult filters in test environment
+play.filters.disabled+=play.filters.csrf.CSRFFilter
+play.filters.disabled+=play.filters.headers.SecurityHeadersFilter
+play.filters.disabled+=play.filters.hosts.AllowedHostsFilter
+

@@ -1,0 +1,21 @@
+#user register
+GET     /                           controllers.HomeController.index
+
+#forward to register page
+GET     /register.html                           controllers.UserController.register
+
+#user register
+# + nocsrf
+POST     /user/doRegister.html                          controllers.UserController.doRegister
+
+#registe css
+GET  /css/*file        controllers.Assets.at(path="/public/css", file)
+
+#user_avatar
+GET  /user_avatar/*file        controllers.Assets.at(path="/public/user_image", file)
+
+#forward to login page
+GET     /login.html                           controllers.UserController.toLoginPage
+
+#user login
+POST     /user/doLogin.html                          controllers.UserController.doLogin

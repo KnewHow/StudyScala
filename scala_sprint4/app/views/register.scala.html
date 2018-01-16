@@ -1,0 +1,58 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(errors:Map[String,String])
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>register page</title>
+    <!-- <link rel="shortcut icon" href="pic/logo.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
+  </head>
+  <body>
+    <h1>REGISTER</h1>
+    <form method="POST" action="/user/doRegister.html" enctype="multipart/form-data">
+      <div class="rigister-form">
+        <div class="form-box">
+          <label class="basic-name">Username:</label>
+          <input class="basic-input" type="text" name="username" value="@errors.get("username")"/>
+          <span class="error-msg">
+              @errors.get("usernameError")
+          </span>
+        </div>
+        <div class="form-box">
+          <label class="basic-name">Password:</label>
+          <input class="basic-input" type="password" name="password" value="@errors.get("password")"/>
+          <span class="error-msg">
+            @errors.get("passwordError")
+          </span>
+        </div>
+
+        <div class="form-box">
+          <label class="basic-name">Email:</label>
+          <input class="basic-input" type="text" name="email" value="@errors.get("email")"/>
+          <span class="error-msg">
+            @errors.get("emailError")
+          </span>
+        </div>
+
+
+        <div class="form-box">
+          <label class="basic-name">City:</label>
+          <input class="basic-input" type="text" name="city" value="@errors.get("city")"/>
+        </div>
+
+        <div class="form-box">
+          <label class="basic-name">Avatar:</label>
+          <input class="basic-input" type="file" name="avatar" value=""/>
+        </div>
+
+        <div class="form-box">
+          <input class="basic-input" type="submit" value="doRegister"/>
+        </div>
+      </div>
+      </div>
+    </form>
+  </body>
+</html>
