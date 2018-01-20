@@ -13,3 +13,16 @@
           s
          </span>
         }
+
+
+ new Weather(
+        (response.json \"main" \ "temp_min" ).validate[Weather]
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+      )

@@ -31,11 +31,22 @@ class WeatherService @Inject() (
 
     val futureResponse: Future[Weather] = complexRequest.get() map{
       response =>
-      (response.json \"main" \ "temp_min" ).validate[Weather].get
+      new Weather(
+        (response.json \"main" \ "temp_min").get.toString,
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+      )
+
 
     }
 
-    //Await.result(futureResponse, Duration(10000, "millis"))
+    Await.result(futureResponse, Duration(10000, "millis"))
     println(request)
     println(futureResponse.value.toString)
     // println("future get"+futureResponse.get())
