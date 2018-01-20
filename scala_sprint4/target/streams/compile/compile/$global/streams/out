@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/services/WeatherService.scala:28:28: value json is not a member of scala.concurrent.Future[play.api.libs.ws.WSResponse][0m
-[0m[[0m[31merror[0m] [0m[0m    println(futureResponse.json)[0m
-[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:13:20: value getMinTemp is not a member of scala.concurrent.Future[models.Weather][0m
+[0m[[0m[31merror[0m] [0m[0m          @weather.getMinTemp[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

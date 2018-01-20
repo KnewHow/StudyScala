@@ -1,4 +1,5 @@
-class Weather(
+package models
+case class Weather(
   name:String,
   weather:String,
   mainTemp:String,

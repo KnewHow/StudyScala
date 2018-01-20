@@ -1,41 +1,46 @@
 package services
 
-import models._
+import models.Weather
 import tools._
 import javax.inject._
 import play.api.libs.ws._
 import play.api._
 import scala.concurrent.Future
+import scala.concurrent.Await
+import scala.concurrent.ExecutionContext
+import scala.concurrent.duration._
+import play.api.libs.json.Json
+// import ExecutionContext.Implicits.global
 
 class WeatherService @Inject() (
   config: Configuration,
-  ws: WSClient
+  ws: WSClient,
+  ec: ExecutionContext
 ){
   val weather_request_base_url=config.get[String]("weather.request.base.url")
   val weather_appid = config.get[String]("weather.request.appid")
-  def getWeather(cityName:String):Unit={
+
+  def getWeather(implicit ec: ExecutionContext,cityName:String):Future[Weather]={
     val request: WSRequest = ws.url(weather_request_base_url)
     val complexRequest: WSRequest =
       request
-        .addQueryStringParameters("p" -> Tools.cityName2Pinyin(cityName))
+        .addQueryStringParameters("q" -> Tools.cityName2Pinyin(cityName))
         .addQueryStringParameters("appid" -> weather_appid)
 
-    val futureResponse: Future[WSResponse] = complexRequest.get()
-    // futureResponse.map{
-    //   response =>
-    //   (response.json).as[String]
-    // }
-    // println(futureResponse.json)
+    implicit val personReads = Json.reads[Weather]
 
+    val futureResponse: Future[Weather] = complexRequest.get() map{
+      response =>
+      (response.json \"main" \ "temp_min" ).validate[Weather].get
 
-    // // println("futureResponse:"+futureResponse.toString)
+    }
 
-    // val holder : WSRequestHolder = WS.url(weather_request_base_u2rl)
-    // val complexHolder : WSRequestHolder = holder
-    //   .withQueryString("p" -> Tools.cityName2Pinyin(cityName))
-    //   .withQueryString("appid" -> weather_appid)
-
-    // val futureResponse : Future[Response] = complexHolder.get()
-    // println(futureResponse)
+    //Await.result(futureResponse, Duration(10000, "millis"))
+    println(request)
+    println(futureResponse.value.toString)
+    // println("future get"+futureResponse.get())
+    println(futureResponse.isCompleted)
+    // println(request.queryParameters())
+    futureResponse
   }
 }

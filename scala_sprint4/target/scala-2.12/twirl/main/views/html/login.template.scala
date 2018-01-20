@@ -73,8 +73,8 @@ Seq[Any](format.raw/*1.29*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 16 07:40:47 CST 2018
-                  SOURCE: /project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/login.scala.html
+                  DATE: Sat Jan 20 11:15:01 CST 2018
+                  SOURCE: /home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/login.scala.html
                   HASH: 2c4072c95a02e9b8abe6ebcff8fdd98e7412bbc6
                   MATRIX: 742->1|864->28|891->29|1123->234|1138->240|1170->251|1446->500|1461->506|1498->522|1560->557|1575->563|1617->584|1656->595|1867->779|1882->785|1920->801|1982->836|1997->842|2039->863|2078->874
                   LINES: 21->1|26->1|27->2|36->11|36->11|36->11|41->16|41->16|41->16|43->18|43->18|43->18|44->19|48->23|48->23|48->23|50->25|50->25|50->25|51->26

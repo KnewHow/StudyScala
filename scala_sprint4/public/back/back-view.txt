@@ -1,0 +1,29 @@
+<span>
+          @while(!str.isCompleted){
+
+          }
+          @str.toString
+        </span>
+
+
+ @str map{
+          s=>
+         <span>
+           <!-- make sure the str completed -->
+          s
+         </span>
+        }
+
+
+ new Weather(
+        (response.json \"main" \ "temp_min" ).validate[Weather]
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+
+      )

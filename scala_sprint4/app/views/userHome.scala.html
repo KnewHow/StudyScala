@@ -1,4 +1,4 @@
-@(user:User)
+@(user:User,weather:scala.concurrent.Future[models.Weather])
 
 <html>
   <head>
@@ -7,7 +7,14 @@
 
   <body>
     <h1>Welcome to your Home:@user.username</h1>
-    <div>
+      <div>
+        <span>
+          @while(!weather.isCompleted){
+
+          }
+          @weather.toString
+        </span>
+
     </div>
   </body>
 </html>

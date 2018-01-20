@@ -15,15 +15,15 @@ import play.api.templates.PlayMagic._
 import play.api.mvc._
 import play.api.data._
 
-object userHome extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[User,play.twirl.api.HtmlFormat.Appendable] {
+object userHome extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[User,scala.concurrent.Future[models.Weather],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(user:User):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user:User,weather:scala.concurrent.Future[models.Weather]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.13*/("""
+Seq[Any](format.raw/*1.61*/("""
 
 """),format.raw/*3.1*/("""<html>
   <head>
@@ -32,7 +32,14 @@ Seq[Any](format.raw/*1.13*/("""
 
   <body>
     <h1>Welcome to your Home:"""),_display_(/*9.31*/user/*9.35*/.username),format.raw/*9.44*/("""</h1>
-    <div>
+      <div>
+        <span>
+          """),_display_(/*12.12*/while(!weather.isCompleted)/*12.39*/{_display_(Seq[Any](format.raw/*12.40*/("""
+
+          """)))}),format.raw/*14.12*/("""
+          """),_display_(/*15.12*/weather/*15.19*/.toString),format.raw/*15.28*/("""
+        """),format.raw/*16.9*/("""</span>
+
     </div>
   </body>
 </html>
@@ -41,9 +48,9 @@ Seq[Any](format.raw/*1.13*/("""
     }
   }
 
-  def render(user:User): play.twirl.api.HtmlFormat.Appendable = apply(user)
+  def render(user:User,weather:scala.concurrent.Future[models.Weather]): play.twirl.api.HtmlFormat.Appendable = apply(user,weather)
 
-  def f:((User) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
+  def f:((User,scala.concurrent.Future[models.Weather]) => play.twirl.api.HtmlFormat.Appendable) = (user,weather) => apply(user,weather)
 
   def ref: this.type = this
 
@@ -52,11 +59,11 @@ Seq[Any](format.raw/*1.13*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 16 08:01:06 CST 2018
-                  SOURCE: /project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html
-                  HASH: f561ba92f9ec18a20db5d6c06a46fc6f3a10b5ea
-                  MATRIX: 730->1|836->12|864->14|985->109|997->113|1026->122
-                  LINES: 21->1|26->1|28->3|34->9|34->9|34->9
+                  DATE: Sat Jan 20 23:36:37 CST 2018
+                  SOURCE: /home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html
+                  HASH: 90834daa0fb81a13682f3a166e19c969fc2dd0bb
+                  MATRIX: 770->1|924->60|952->62|1073->157|1085->161|1114->170|1185->214|1221->241|1260->242|1304->255|1343->267|1359->274|1389->283|1425->292
+                  LINES: 21->1|26->1|28->3|34->9|34->9|34->9|37->12|37->12|37->12|39->14|40->15|40->15|40->15|41->16
                   -- GENERATED --
               */
           

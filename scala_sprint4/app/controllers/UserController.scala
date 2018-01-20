@@ -11,6 +11,7 @@ import java.util.Date
 import play.filters.csrf._
 
 import java.util.UUID.randomUUID
+import scala.concurrent.ExecutionContext
 
 import services._
 import models._
@@ -21,7 +22,8 @@ class UserController @Inject()(
   cc:ControllerComponents,
   userService:UserSerice,
   weatherService:WeatherService,
-  config: Configuration
+  config: Configuration,
+  ec: ExecutionContext
 ) extends AbstractController(cc){
 
   val picturePath = config.get[String]("user.avatar.disk.path")
@@ -73,8 +75,9 @@ class UserController @Inject()(
     try{
       val user =  userService.login(formData.get("username").mkString,
         formData.get("password").mkString)
-      weatherService.getWeather(user.city)
-      Ok(views.html.userHome(user))
+      val weather = weatherService.getWeather(ec,user.city)
+      println("weather is:"+weather.isCompleted)
+      Ok(views.html.userHome(user,weather))
     }catch{
       case ex:UserException =>
         Ok(views.html.login(scala.collection.immutable.Map[String,String](
