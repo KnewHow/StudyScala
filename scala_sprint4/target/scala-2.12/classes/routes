@@ -19,3 +19,9 @@ GET     /login.html                           controllers.UserController.toLogin
 
 #user login
 POST     /user/doLogin.html                          controllers.UserController.doLogin
+
+#forward to chat page
+GET     /toChatPage.html                           controllers.UserController.toChatPage
+
+#submit chat content
+POST     /send.html                           controllers.UserController.socket

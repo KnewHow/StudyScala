@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/conf/routes
-// @DATE:Sat Jan 20 11:15:01 CST 2018
+// @DATE:Sun Jan 21 18:20:25 CST 2018
 
 package controllers;
 

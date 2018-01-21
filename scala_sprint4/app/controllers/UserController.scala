@@ -12,6 +12,7 @@ import play.filters.csrf._
 
 import java.util.UUID.randomUUID
 import scala.concurrent.ExecutionContext
+import akka.stream.scaladsl._
 
 import services._
 import models._
@@ -86,9 +87,23 @@ class UserController @Inject()(
           ("password",formData.get("password").mkString)
         )))
     }
-
-
   }
+
+  def toChatPage = Action{ implicit request:Request[AnyContent] =>
+    Ok(views.html.chatPage())
+  }
+
+  def socket = WebSocket.accept[String, String] {
+    request =>
+
+  // Log events to the console
+  val in = Sink.foreach[String](println)
+
+  // Send a single 'Hello!' message and then leave the socket open
+  val out = Source.single("Hello!").concat(Source.maybe)
+
+  Flow.fromSinkAndSource(in, out)
+}
 
   def accessToken (implicit request: Request[_]):Unit={
     val token = CSRF.getToken

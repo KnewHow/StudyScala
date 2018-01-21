@@ -23,15 +23,19 @@ class UserSerice{
     // )
     // val user = ctx.run(q(username))
    val result =  ctx.run { query[User].filter(_.username == lift(username))}
-    if(result.size==0){
+    if(result==null &&  result.size==0){
       throw new UserException("username don't exsit!")
     }
     if(result.size==1){
       val user = result.apply(0)
       if(!Tools.MD5(password).equals(user.password)){
         throw new UserException("username or password is not right")
+      }else{
+         result.apply(0)
       }
+    }else{
+       throw new UserException("multiply username exsit!")
     }
-    result.apply(0)
+
   }
 }

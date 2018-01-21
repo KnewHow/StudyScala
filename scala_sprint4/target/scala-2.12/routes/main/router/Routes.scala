@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/conf/routes
-// @DATE:Sat Jan 20 11:15:01 CST 2018
+// @DATE:Sun Jan 21 18:20:25 CST 2018
 
 package router
 
@@ -50,6 +50,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user_avatar/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public/user_image", file:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login.html""", """controllers.UserController.toLoginPage"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user/doLogin.html""", """controllers.UserController.doLogin"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """toChatPage.html""", """controllers.UserController.toChatPage"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """send.html""", """controllers.UserController.socket"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -184,6 +186,42 @@ class Routes(
     )
   )
 
+  // @LINE:24
+  private[this] lazy val controllers_UserController_toChatPage7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("toChatPage.html")))
+  )
+  private[this] lazy val controllers_UserController_toChatPage7_invoker = createInvoker(
+    UserController_1.toChatPage,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.UserController",
+      "toChatPage",
+      Nil,
+      "GET",
+      this.prefix + """toChatPage.html""",
+      """forward to chat page""",
+      Seq()
+    )
+  )
+
+  // @LINE:27
+  private[this] lazy val controllers_UserController_socket8_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("send.html")))
+  )
+  private[this] lazy val controllers_UserController_socket8_invoker = createInvoker(
+    UserController_1.socket,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.UserController",
+      "socket",
+      Nil,
+      "POST",
+      this.prefix + """send.html""",
+      """submit chat content""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -227,6 +265,18 @@ class Routes(
     case controllers_UserController_doLogin6_route(params@_) =>
       call { 
         controllers_UserController_doLogin6_invoker.call(UserController_1.doLogin)
+      }
+  
+    // @LINE:24
+    case controllers_UserController_toChatPage7_route(params@_) =>
+      call { 
+        controllers_UserController_toChatPage7_invoker.call(UserController_1.toChatPage)
+      }
+  
+    // @LINE:27
+    case controllers_UserController_socket8_route(params@_) =>
+      call { 
+        controllers_UserController_socket8_invoker.call(UserController_1.socket)
       }
   }
 }

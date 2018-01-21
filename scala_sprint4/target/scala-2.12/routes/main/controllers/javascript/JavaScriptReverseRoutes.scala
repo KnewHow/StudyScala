@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/conf/routes
-// @DATE:Sat Jan 20 11:15:01 CST 2018
+// @DATE:Sun Jan 21 18:20:25 CST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -67,6 +67,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:24
+    def toChatPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.toChatPage",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "toChatPage.html"})
+        }
+      """
+    )
+  
     // @LINE:21
     def doLogin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.doLogin",
@@ -87,12 +97,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
-    def toLoginPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.UserController.toLoginPage",
+    // @LINE:27
+    def socket: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.socket",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login.html"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "send.html"})
         }
       """
     )
@@ -103,6 +113,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register.html"})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def toLoginPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.toLoginPage",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login.html"})
         }
       """
     )
