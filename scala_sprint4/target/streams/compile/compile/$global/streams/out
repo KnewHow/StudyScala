@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/services/WeatherService.scala:36:9: ')' expected but string literal found.[0m
-[0m[[0m[31merror[0m] [0m[0m        "",[0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:15:26: value name is not a member of Option[scala.util.Try[models.Weather]][0m
+[0m[[0m[31merror[0m] [0m[0m          @weather.value.name[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -32,21 +32,15 @@ class WeatherService @Inject() (
     val futureResponse: Future[Weather] = complexRequest.get() map{
       response =>
       new Weather(
-        (response.json \"main" \ "temp_min").get.toString,
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
+        (response.json \"name").get.toString,
+        (response.json \"weather").get.toString,
+        Tools.kelvin2Centigrade((response.json \ "main" \"temp").get.toString),
+        Tools.kelvin2Centigrade((response.json \ "main" \"temp_min").get.toString),
+        Tools.kelvin2Centigrade((response.json \ "main" \"temp_max").get.toString),
+        (response.json \ "main" \"pressure").get.toString,
+        (response.json  \"wind").get.toString
       )
-
-
     }
-
-    Await.result(futureResponse, Duration(10000, "millis"))
     println(request)
     println(futureResponse.value.toString)
     // println("future get"+futureResponse.get())

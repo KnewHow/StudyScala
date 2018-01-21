@@ -5,8 +5,9 @@ case class Weather(
   mainTemp:String,
   minTemp:String,
   maxTemp:String,
+  pressure:String,
   wind:String,
-  clouds:String,
-  rain:String,
-  snow:String
+ // clouds:String,
+  //rain:String,
+  //snow:String
 )

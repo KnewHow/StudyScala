@@ -52,4 +52,11 @@ class TestTool extends FlatSpec{
     val pinyinName ="Hangzhou"
     assert(Tools.cityName2Pinyin(cname).equals(pinyinName))
   }
+
+  "A Kelvin 280.32 transform centigrade" should "equal 7.17C" in{
+    val k = "280.32"
+    val cal = Tools.kelvin2Centigrade(k)
+    val target = "7.17"
+    assert(target==cal)
+  }
 }

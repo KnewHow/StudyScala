@@ -40,4 +40,10 @@ object  Tools{
     val cnamePinyin = transferChinese2Pinyin(cname)
     cnamePinyin.substring(0,1).toUpperCase()+cnamePinyin.substring(1,cnamePinyin.length)
   }
+
+  def kelvin2Centigrade(s:String):String={
+    val b1 = BigDecimal(s)
+    val b2 = BigDecimal("273.15")
+    (b1-b2).toString
+  }
 }

@@ -1,0 +1,24 @@
+.w-content{
+  margin:5px 0 5px 0;
+}
+
+.w-name{
+  //display:inline-block;
+  //float:left;
+  //width:60px;
+  //line-height:30px;
+  //font-size:20px;
+}
+
+.w-result{
+  display:inline-block;
+ // float:left;
+ // margin-left:20px;
+  //line-height:30px;
+  //font-size:20px;
+
+}
+
+.avatar{
+  float:0 auto 0 auto;
+}

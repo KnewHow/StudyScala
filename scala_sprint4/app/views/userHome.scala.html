@@ -3,17 +3,55 @@
 <html>
   <head>
     <title>User Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/userhome.css">
   </head>
 
   <body>
     <h1>Welcome to your Home:@user.username</h1>
+      <div class="avatar">
+        <img width="200px" height="200px" src="@user.avatar">
+      </div>
       <div>
-        <span>
+        <div class="weather">
           @while(!weather.isCompleted){
 
           }
-          @weather.toString
-        </span>
+          <div class="w-content">
+            <label class="w-name">City:</label>
+            <p class="w-result">@weather.value.get.get.name</p>
+          </div>
+
+          <div class="w-content">
+            <label class="w-name">Weather:</label>
+            <span  class="w-result">@weather.value.get.get.weather<span>
+          </div>
+
+          <div class="w-content">
+            <label class="w-name">Average Temperature:</label>
+            <p class="w-result">@weather.value.get.get.mainTemp C</p>
+          </div>
+
+          <div class="w-content">
+            <label>Mxsinimum Temperature:</label>
+            <p class="w-result">@weather.value.get.get.minTemp C</p>
+          </div>
+
+          <div class="w-content">
+            <label>Maximual Temperature:</label>
+            <p class="w-result">@weather.value.get.get.maxTemp C</p>
+          </div>
+
+          <div class="w-content">
+            <label class="w-name">Pressure:</label>
+            <p class="w-result">@weather.value.get.get.pressure Hpa</p>
+          </div>
+
+          <div class="w-content">
+            <label class="w-name">Wind:</label>
+            <p class="w-result">@weather.value.get.get.wind</p>
+          </div>
+
+        </div>
 
     </div>
   </body>
