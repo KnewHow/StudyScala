@@ -1,28 +1,19 @@
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:101:16: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserAction.scala:18:14: patterns after a variable pattern cannot match (SLS 8.1.1)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        case u =>  UserRequest(u, request)[0m
+[0m[[0m[33mwarn[0m] [0m[0m             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserAction.scala:19:33: unreachable code due to variable pattern 'u' on line 18[0m
+[0m[[0m[33mwarn[0m] [0m[0m        case None => UserRequest(None,request)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:104:16: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
 [0m[[0m[33mwarn[0m] [0m[0m      futureId map([0m
 [0m[[0m[33mwarn[0m] [0m[0m               ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:122:13: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:125:13: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
 [0m[[0m[33mwarn[0m] [0m[0m    user.map{[0m
 [0m[[0m[33mwarn[0m] [0m[0m            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:139:28: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
-[0m[[0m[33mwarn[0m] [0m[0m          weatherFuture.map(w => Ok(views.html.userHome(u,w)))[0m
-[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:140:28: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
-[0m[[0m[33mwarn[0m] [0m[0m        case None => Future(Unauthorized("Oops, you accout is error"))[0m
-[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:136:12: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
-[0m[[0m[33mwarn[0m] [0m[0m      user flatMap{[0m
-[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:143:15: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
-[0m[[0m[33mwarn[0m] [0m[0m        Future(Unauthorized("Oops, you accout is error"))[0m
-[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:197:38: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
-[0m[[0m[33mwarn[0m] [0m[0m    def executionContext = implicitly[ExecutionContext][0m
-[0m[[0m[33mwarn[0m] [0m[0m                                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:201:13: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
-[0m[[0m[33mwarn[0m] [0m[0m        .map{[0m
-[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:208:15: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
-[0m[[0m[33mwarn[0m] [0m[0m        Future(Left(Forbidden))[0m
-[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m9 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:140:26: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        weatherFuture.map(w => Ok(views.html.userHome(u,w)))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:141:26: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      case None => Future(Unauthorized("Oops, you accout is error"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m6 warnings found[0m

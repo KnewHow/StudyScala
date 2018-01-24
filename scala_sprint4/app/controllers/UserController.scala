@@ -33,13 +33,16 @@ class UserController @Inject()(
   userService:UserSerice,
   weatherService:WeatherService,
   config: Configuration,
-  ec: ExecutionContext
+  ec: ExecutionContext,
+  userAction:UserAction
 ) extends AbstractController(cc){
 
   // trait MyExecutionContext extends ExecutionContext
 
   // class MyExecutionContextImpl @Inject()(system: ActorSystem)
   // extends CustomExecutionContext(system, "my.executor") with MyExecutionContext
+
+  // val xxx = Action.andThen(userAction)
 
   val picturePath = config.get[String]("user.avatar.disk.path")
 
@@ -128,20 +131,27 @@ class UserController @Inject()(
     }
   }
 
-  def userHome = Action.async{implicit request =>
+  def userHome = userAction.async{ request =>
 
 
-    request.session.get("userId").map { id =>
-      val user = userService.queryUserById(id.toInt)
-      user flatMap{
-        case Some(u) =>
+    request.user match{
+      case Some(u) =>
         val weatherFuture = weatherService.getWeather(u.city)
-          weatherFuture.map(w => Ok(views.html.userHome(u,w)))
-        case None => Future(Unauthorized("Oops, you accout is error"))
-      }
-    }.getOrElse {
-        Future(Unauthorized("Oops, you accout is error"))
+        weatherFuture.map(w => Ok(views.html.userHome(u,w)))
+      case None => Future(Unauthorized("Oops, you accout is error"))
     }
+
+    // request.session.get("userId").map { id =>
+    //   val user = userService.queryUserById(id.toInt)
+    //   user flatMap{
+    //     case Some(u) =>
+    //     val weatherFuture = weatherService.getWeather(u.city)
+    //       weatherFuture.map(w => Ok(views.html.userHome(u,w)))
+    //     case None => Future(Unauthorized("Oops, you accout is error"))
+    //   }
+    // }.getOrElse {
+    //     Future(Unauthorized("Oops, you accout is error"))
+    // }
   }
 
   def toChatPage = Action{ implicit request:Request[AnyContent] =>
@@ -193,27 +203,22 @@ class UserController @Inject()(
     new scala.collection.immutable.HashMap ++ errors
   }
 
-  def UserAction = new ActionRefiner[Request,UserRequest] {
-    def executionContext = implicitly[ExecutionContext]
-    def refine[A](input:Request[A]) =  {
-      input.session.get("userId").map { id =>
-        userService.queryUserById(id.toInt)
-        .map{
-          case Some(u) =>
-            Right(UserRequest(u,input))
-          case None =>
-            Left(Forbidden)
-        }
-      }.getOrElse {
-        Future(Left(Forbidden))
-      }
+  // def UserAction = new ActionRefiner[Request,UserRequest] {
+  //   def executionContext = implicitly[ExecutionContext]
+  //   def refine[A](input:Request[A]) =  {
+  //     input.session.get("userId").map { id =>
+  //       userService.queryUserById(id.toInt)
+  //       .map{
+  //         case Some(u) =>
+  //           Right(UserRequest(u,input))
+  //         case None =>
+  //           Left(Forbidden)
+  //       }
+  //     }.getOrElse {
+  //       Future(Left(Forbidden))
+  //     }
+  //   }
+  // }
 
-    }
-  }
-
-
-}
-
-case class UserRequest[A](val user: User, request: Request[A]) extends WrappedRequest[A](request){
 
 }
