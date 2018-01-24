@@ -1,5 +1,6 @@
 package controllers
 
+import scala.concurrent.Future
 import play.api._
 import javax.inject._
 import play.api.mvc._
@@ -12,7 +13,15 @@ import play.filters.csrf._
 
 import java.util.UUID.randomUUID
 import scala.concurrent.ExecutionContext
+import play.api.libs.concurrent.CustomExecutionContext
+import play.api.libs.concurrent.Execution.Implicits._
+
+import play.api.data._
+import play.api.data.Forms._
+import play.api.data.validation.Constraints._
+
 import akka.stream.scaladsl._
+
 
 import services._
 import models._
@@ -27,12 +36,44 @@ class UserController @Inject()(
   ec: ExecutionContext
 ) extends AbstractController(cc){
 
+  // trait MyExecutionContext extends ExecutionContext
+
+  // class MyExecutionContextImpl @Inject()(system: ActorSystem)
+  // extends CustomExecutionContext(system, "my.executor") with MyExecutionContext
+
   val picturePath = config.get[String]("user.avatar.disk.path")
 
   val suffix = config.get[String]("user.avatar.suffix")
 
-  val user_avatar_server_path =config.get[String]("user.avatar.server.path") ;
-  def doRegister = Action(parse.multipartFormData){ implicit request =>
+  val user_avatar_server_path =config.get[String]("user.avatar.server.path")
+
+  val userForm = Form(
+    mapping(
+      "id" -> number,
+      "username" -> text,
+      "password" -> text,
+      "email" -> text,
+      "avatar" -> text,
+      "city" -> text,
+      "gmt_create" -> date,
+      "gmt_modified" -> date
+      )(User.apply)(User.unapply)
+  )
+
+  val loginForm = Form(
+    mapping(
+      "username" -> text,
+      "password" -> text
+    )(LoginUser.apply)(LoginUser.unapply)
+  )
+
+  val UserIdForm = Form(
+    mapping(
+      "id" -> number
+    )(UserId.apply)(UserId.unapply)
+  )
+
+  def doRegister = Action.async(parse.multipartFormData){ implicit request =>
 
     val filename = randomUUID().toString+suffix
     val avatar_path = user_avatar_server_path+filename
@@ -41,12 +82,11 @@ class UserController @Inject()(
     request.body.file("avatar").map{ picture =>
       picture.ref.moveTo(Paths.get(picturePath+filename), replace = true)
     }
+
+
     val userinfo = request.body.dataParts
     val map = checkFormParameters(userinfo)
-    if(map.size!=0){
-      Ok(views.html.register(map))
-    }else{
-      val user = new User(
+    val user = new User(
         1,
         userinfo.get("username").get.mkString,
         Tools.MD5(userinfo.get("password").get.mkString),
@@ -55,10 +95,12 @@ class UserController @Inject()(
         userinfo.get("city").get.mkString,
         new Date(),
         new Date()
+    )
+      val futureId =  userService.register(user)
+      // Ok(views.html.registerSuccess("Congratulation! Register Success"))
+      futureId map(
+        id => Ok(views.html.registerSuccess("Congratulation! Register Success"))
       )
-      userService.register(user)
-      Ok(views.html.registerSuccess("Congratulation! Register Success"))
-    }
 
   }
 
@@ -71,21 +113,34 @@ class UserController @Inject()(
     Ok(views.html.login(scala.collection.immutable.Map[String,String]()))
   }
 
-  def doLogin = Action{ implicit request:Request[AnyContent] =>
-    val formData = request.body.asFormUrlEncoded
-    try{
-      val user =  userService.login(formData.get("username").mkString,
-        formData.get("password").mkString)
-      val weather = weatherService.getWeather(ec,user.city)
-      println("weather is:"+weather.isCompleted)
-      Ok(views.html.userHome(user,weather))
-    }catch{
-      case ex:UserException =>
-        Ok(views.html.login(scala.collection.immutable.Map[String,String](
-          ("msg",ex.getMessage()),
-          ("username",formData.get("username").mkString),
-          ("password",formData.get("password").mkString)
-        )))
+  def doLogin = Action.async(parse.form(loginForm)){ implicit request =>
+    val userData = request.body
+    val user =  userService.login(
+      userData.username,
+      userData.password
+    )
+    user.map{
+      case Some(u) =>
+        val id = u.id.toString
+        Redirect("/userHome.html").withSession(
+          request.session + ("userId" -> id))
+      case None =>Unauthorized("username or password error")
+    }
+  }
+
+  def userHome = Action.async{implicit request =>
+
+
+    request.session.get("userId").map { id =>
+      val user = userService.queryUserById(id.toInt)
+      user flatMap{
+        case Some(u) =>
+        val weatherFuture = weatherService.getWeather(u.city)
+          weatherFuture.map(w => Ok(views.html.userHome(u,w)))
+        case None => Future(Unauthorized("Oops, you accout is error"))
+      }
+    }.getOrElse {
+        Future(Unauthorized("Oops, you accout is error"))
     }
   }
 
@@ -137,4 +192,28 @@ class UserController @Inject()(
 
     new scala.collection.immutable.HashMap ++ errors
   }
+
+  def UserAction = new ActionRefiner[Request,UserRequest] {
+    def executionContext = implicitly[ExecutionContext]
+    def refine[A](input:Request[A]) =  {
+      input.session.get("userId").map { id =>
+        userService.queryUserById(id.toInt)
+        .map{
+          case Some(u) =>
+            Right(UserRequest(u,input))
+          case None =>
+            Left(Forbidden)
+        }
+      }.getOrElse {
+        Future(Left(Forbidden))
+      }
+
+    }
+  }
+
+
+}
+
+case class UserRequest[A](val user: User, request: Request[A]) extends WrappedRequest[A](request){
+
 }

@@ -10,6 +10,7 @@ import scala.concurrent.Await
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration._
 import play.api.libs.json.Json
+import play.api.libs.concurrent.Execution.Implicits._
 // import ExecutionContext.Implicits.global
 
 class WeatherService @Inject() (
@@ -20,7 +21,7 @@ class WeatherService @Inject() (
   val weather_request_base_url=config.get[String]("weather.request.base.url")
   val weather_appid = config.get[String]("weather.request.appid")
 
-  def getWeather(implicit ec: ExecutionContext,cityName:String):Future[Weather]={
+  def getWeather(cityName:String):Future[Weather]={
     val request: WSRequest = ws.url(weather_request_base_url)
     val complexRequest: WSRequest =
       request
@@ -41,10 +42,10 @@ class WeatherService @Inject() (
         (response.json  \"wind").get.toString
       )
     }
-    println(request)
-    println(futureResponse.value.toString)
+    // println(request)
+    // println(futureResponse.value.toString)
     // println("future get"+futureResponse.get())
-    println(futureResponse.isCompleted)
+    // println(futureResponse.isCompleted)
     // println(request.queryParameters())
     futureResponse
   }

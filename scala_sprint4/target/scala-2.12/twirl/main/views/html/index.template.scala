@@ -54,8 +54,8 @@ Seq[Any](format.raw/*5.19*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 20 11:15:01 CST 2018
-                  SOURCE: /home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/index.scala.html
+                  DATE: Mon Jan 22 14:53:47 CST 2018
+                  SOURCE: /Users/how/project/studyScala/workspace/scala_sprint4/app/views/index.scala.html
                   HASH: 5420719868443a30bb93a32a9a92ad96cbed7299
                   MATRIX: 818->95|930->112|957->113
                   LINES: 24->5|29->5|30->6

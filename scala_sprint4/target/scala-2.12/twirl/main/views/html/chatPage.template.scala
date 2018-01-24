@@ -76,8 +76,8 @@ Seq[Any](format.raw/*1.1*/("""<html>
 
               /*
                   -- GENERATED --
-                  DATE: Sun Jan 21 18:22:22 CST 2018
-                  SOURCE: /home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/chatPage.scala.html
+                  DATE: Mon Jan 22 14:53:47 CST 2018
+                  SOURCE: /Users/how/project/studyScala/workspace/scala_sprint4/app/views/chatPage.scala.html
                   HASH: 576a7b525369d98c71eeb32e97f066e4e3cc8e0c
                   MATRIX: 814->0
                   LINES: 26->1

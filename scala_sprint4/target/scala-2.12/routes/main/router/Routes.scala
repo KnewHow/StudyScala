@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/conf/routes
-// @DATE:Sun Jan 21 18:20:25 CST 2018
+// @SOURCE:/Users/how/project/studyScala/workspace/scala_sprint4/conf/routes
+// @DATE:Tue Jan 23 14:42:11 CST 2018
 
 package router
 
@@ -52,6 +52,7 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user/doLogin.html""", """controllers.UserController.doLogin"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """toChatPage.html""", """controllers.UserController.toChatPage"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """send.html""", """controllers.UserController.socket"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """userHome.html""", """controllers.UserController.userHome"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -222,6 +223,24 @@ class Routes(
     )
   )
 
+  // @LINE:30
+  private[this] lazy val controllers_UserController_userHome9_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("userHome.html")))
+  )
+  private[this] lazy val controllers_UserController_userHome9_invoker = createInvoker(
+    UserController_1.userHome,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.UserController",
+      "userHome",
+      Nil,
+      "GET",
+      this.prefix + """userHome.html""",
+      """user home""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -277,6 +296,12 @@ class Routes(
     case controllers_UserController_socket8_route(params@_) =>
       call { 
         controllers_UserController_socket8_invoker.call(UserController_1.socket)
+      }
+  
+    // @LINE:30
+    case controllers_UserController_userHome9_route(params@_) =>
+      call { 
+        controllers_UserController_userHome9_invoker.call(UserController_1.userHome)
       }
   }
 }

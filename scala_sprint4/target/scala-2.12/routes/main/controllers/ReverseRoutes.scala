@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/conf/routes
-// @DATE:Sun Jan 21 18:20:25 CST 2018
+// @SOURCE:/Users/how/project/studyScala/workspace/scala_sprint4/conf/routes
+// @DATE:Tue Jan 23 14:42:11 CST 2018
 
 import play.api.mvc.Call
 
@@ -65,6 +65,12 @@ package controllers {
     def toChatPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "toChatPage.html")
+    }
+  
+    // @LINE:30
+    def userHome(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "userHome.html")
     }
   
     // @LINE:21

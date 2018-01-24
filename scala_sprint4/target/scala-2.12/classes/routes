@@ -25,3 +25,6 @@ GET     /toChatPage.html                           controllers.UserController.to
 
 #submit chat content
 POST     /send.html                           controllers.UserController.socket
+
+#user home
+GET     /userHome.html                           controllers.UserController.userHome

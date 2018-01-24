@@ -1,40 +1,28 @@
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/controllers/UserController.scala:80:30: no arguments allowed for nullary method apply: ()play.twirl.api.HtmlFormat.Appendable in object userHome[0m
-[0m[[0m[31merror[0m] [0m[0m      Ok(views.html.userHome(user,weather))[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:1:4: not found: value user[0m
-[0m[[0m[31merror[0m] [0m[0m<@(user:User,weather:scala.concurrent.Future[models.Weather])[0m
-[0m[[0m[31merror[0m] [0m[0m   ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:1:14: not found: value weather[0m
-[0m[[0m[31merror[0m] [0m[0m<@(user:User,weather:scala.concurrent.Future[models.Weather])[0m
-[0m[[0m[31merror[0m] [0m[0m             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:10:31: not found: value user[0m
-[0m[[0m[31merror[0m] [0m[0m    <h1>Welcome to your Home:@user.username</h1>[0m
-[0m[[0m[31merror[0m] [0m[0m                              ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:12:49: not found: value user[0m
-[0m[[0m[31merror[0m] [0m[0m        <img width="200px" height="200px" src="@user.avatar">[0m
-[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:17:19: not found: value weather[0m
-[0m[[0m[31merror[0m] [0m[0m          @while(!weather.isCompleted){[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:22:34: not found: value weather[0m
-[0m[[0m[31merror[0m] [0m[0m            <p class="w-result">@weather.value.get.get.name</p>[0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:27:38: not found: value weather[0m
-[0m[[0m[31merror[0m] [0m[0m            <span  class="w-result">@weather.value.get.get.weather<span>[0m
-[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:32:34: not found: value weather[0m
-[0m[[0m[31merror[0m] [0m[0m            <p class="w-result">@weather.value.get.get.mainTemp C</p>[0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:37:34: not found: value weather[0m
-[0m[[0m[31merror[0m] [0m[0m            <p class="w-result">@weather.value.get.get.minTemp C</p>[0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:42:34: not found: value weather[0m
-[0m[[0m[31merror[0m] [0m[0m            <p class="w-result">@weather.value.get.get.maxTemp C</p>[0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:47:34: not found: value weather[0m
-[0m[[0m[31merror[0m] [0m[0m            <p class="w-result">@weather.value.get.get.pressure Hpa</p>[0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/userHome.scala.html:52:34: not found: value weather[0m
-[0m[[0m[31merror[0m] [0m[0m            <p class="w-result">@weather.value.get.get.wind</p>[0m
-[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m13 errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:101:16: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      futureId map([0m
+[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:122:13: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    user.map{[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:139:28: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m          weatherFuture.map(w => Ok(views.html.userHome(u,w)))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:140:28: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        case None => Future(Unauthorized("Oops, you accout is error"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:136:12: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      user flatMap{[0m
+[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:143:15: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        Future(Unauthorized("Oops, you accout is error"))[0m
+[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:197:38: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m    def executionContext = implicitly[ExecutionContext][0m
+[0m[[0m[33mwarn[0m] [0m[0m                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:201:13: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        .map{[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/scala_sprint4/app/controllers/UserController.scala:208:15: object Execution in package concurrent is deprecated (since 2.6.0): Please see https://www.playframework.com/documentation/2.6.x/Migration26#play.api.libs.concurrent.Execution-is-deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        Future(Left(Forbidden))[0m
+[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m9 warnings found[0m

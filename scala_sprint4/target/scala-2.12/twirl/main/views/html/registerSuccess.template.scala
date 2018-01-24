@@ -46,8 +46,8 @@ Seq[Any](format.raw/*1.18*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 20 11:15:01 CST 2018
-                  SOURCE: /home/ygh/project/studyScala/workspace/scalaWorkspace/scala_sprint4/app/views/registerSuccess.scala.html
+                  DATE: Mon Jan 22 14:53:47 CST 2018
+                  SOURCE: /Users/how/project/studyScala/workspace/scala_sprint4/app/views/registerSuccess.scala.html
                   HASH: 0e4684b6e9ddd09a831e08914fd9dbdea148a6d5
                   MATRIX: 739->1|850->17|878->19|930->45|957->52
                   LINES: 21->1|26->1|28->3|28->3|28->3

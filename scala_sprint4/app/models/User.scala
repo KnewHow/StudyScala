@@ -15,3 +15,14 @@ case class User(
   gmt_create:Date,
   gmt_modified:Date
 )
+
+
+/**
+ *
+ */
+case class LoginUser(
+  username:String,
+  password:String
+)
+
+case class UserId(id:Int)

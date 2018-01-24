@@ -20,7 +20,8 @@ libraryDependencies += ehcache
 //Add mysql driver and quill frame
 libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "5.1.38",
-  "io.getquill" %% "quill-jdbc" % "2.3.2"
+  "io.getquill" %% "quill-jdbc" % "2.3.2",
+  "io.getquill" %% "quill-async-mysql" % "2.3.3-SNAPSHOT"
 )
 
 //test lib
