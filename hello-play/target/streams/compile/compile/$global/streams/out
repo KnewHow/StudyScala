@@ -1,3 +1,6 @@
-[0m[[0m[0minfo[0m] [0m[0m/project/studyScala/workspace/scalaWorkspace/hello-play/app/services/PersonService.scala:14:12: SELECT p.id, p.name, p.age FROM person p[0m
-[0m[[0m[0minfo[0m] [0m[0m    ctx.run(q)[0m
-[0m[[0m[0minfo[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/how/project/studyScala/workspace/hello-play/conf/routes:31:1: Cannot use a method returning play.api.mvc.ActionRefiner[controllers.UserRequest,controllers.ItemRequest]{def refine[A](input: controllers.UserRequest[A]): scala.concurrent.Future[Either[Routes.this.LearnRequestController_2.Status,controllers.ItemRequest[A]]]} as a Handler for requests[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /action/builder/requestinfo.html                        controllers.LearnRequestController.showRequestInfo[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/how/project/studyScala/workspace/hello-play/conf/routes:31:1: not enough arguments for method createInvoker: (implicit hif: play.core.routing.HandlerInvokerFactory[play.api.mvc.ActionRefiner[controllers.UserRequest,controllers.ItemRequest]{def refine[A](input: controllers.UserRequest[A]): scala.concurrent.Future[Either[Routes.this.LearnRequestController_2.Status,controllers.ItemRequest[A]]]}])play.core.routing.HandlerInvoker[play.api.mvc.ActionRefiner[controllers.UserRequest,controllers.ItemRequest]{def refine[A](input: controllers.UserRequest[A]): scala.concurrent.Future[Either[Routes.this.LearnRequestController_2.Status,controllers.ItemRequest[A]]]}].[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter hif.[0m
+[0m[[0m[31merror[0m] [0m[0mGET     /action/builder/requestinfo.html                        controllers.LearnRequestController.showRequestInfo[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

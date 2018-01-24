@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/project/studyScala/workspace/scalaWorkspace/hello-play/conf/routes
-// @DATE:Thu Jan 11 15:16:33 CST 2018
+// @SOURCE:/Users/how/project/studyScala/workspace/hello-play/conf/routes
+// @DATE:Wed Jan 24 15:20:55 CST 2018
 
 
 package router {

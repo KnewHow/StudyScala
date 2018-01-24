@@ -56,8 +56,8 @@ Seq[Any](format.raw/*1.23*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Jan 11 15:03:42 CST 2018
-                  SOURCE: /project/studyScala/workspace/scalaWorkspace/hello-play/app/views/personList.scala.html
+                  DATE: Wed Jan 24 13:15:26 CST 2018
+                  SOURCE: /Users/how/project/studyScala/workspace/hello-play/app/views/personList.scala.html
                   HASH: 0cc761366f355e514d800c4237e9f61fbe9349e7
                   MATRIX: 739->1|855->22|882->23|985->101|1017->118|1055->119|1087->124|1130->140|1140->141|1164->144|1208->161|1218->162|1244->167|1288->184|1298->185|1323->189|1373->209|1402->211
                   LINES: 21->1|26->1|27->2|34->9|34->9|34->9|35->10|36->11|36->11|36->11|37->12|37->12|37->12|38->13|38->13|38->13|40->15|42->17

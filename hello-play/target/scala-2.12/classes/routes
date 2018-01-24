@@ -5,3 +5,27 @@ GET     /                           controllers.HomeController.index
 
 #person List
 GET     /person/personList                           controllers.PersonController.personList
+
+#test action builder
+GET     /action/builder.html                        controllers.MyController.index
+
+#test submit request
+GET     /action/builder/submit.html                        controllers.MyController.submit
+
+
+#test submit request
+GET     /action/builder/index2.html                        controllers.MyController.index2
+
+
+#test forword request
+GET     /action/builder/showFodward.html                        controllers.MyController.showFodward
+
+
+#test https validate request
+GET     /action/builder/showHTTPS.html                        controllers.MyController.showHttps
+
+#test user authentication
+GET     /action/builder/showUserAuthen.html                        controllers.LearnRequestController.showUserAuthentication
+
+#test request info
+# GET     /action/builder/requestinfo.html                        controllers.LearnRequestController.showRequestInfo

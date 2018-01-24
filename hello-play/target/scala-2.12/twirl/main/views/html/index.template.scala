@@ -44,8 +44,8 @@ Seq[Any](format.raw/*5.19*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 09 14:48:58 CST 2018
-                  SOURCE: /project/studyScala/workspace/scalaWorkspace/hello-play/app/views/index.scala.html
+                  DATE: Wed Jan 24 13:15:26 CST 2018
+                  SOURCE: /Users/how/project/studyScala/workspace/hello-play/app/views/index.scala.html
                   HASH: 16e399359ca39147110506b45f83065c6f8b1791
                   MATRIX: 818->95|930->112|957->113
                   LINES: 24->5|29->5|30->6
