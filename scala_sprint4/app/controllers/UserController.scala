@@ -42,7 +42,7 @@ class UserController @Inject()(
   // class MyExecutionContextImpl @Inject()(system: ActorSystem)
   // extends CustomExecutionContext(system, "my.executor") with MyExecutionContext
 
-  // val xxx = Action.andThen(userAction)
+  val uAction2 = Action.andThen(userAction2)
 
   val picturePath = config.get[String]("user.avatar.disk.path")
 
@@ -133,25 +133,9 @@ class UserController @Inject()(
 
   def userHome = userAction.async{ request =>
 
-
-    request.user match{
-      case Some(u) =>
-        val weatherFuture = weatherService.getWeather(u.city)
-        weatherFuture.map(w => Ok(views.html.userHome(u,w)))
-      case None => Future(Unauthorized("Oops, you accout is error"))
-    }
-
-    // request.session.get("userId").map { id =>
-    //   val user = userService.queryUserById(id.toInt)
-    //   user flatMap{
-    //     case Some(u) =>
-    //     val weatherFuture = weatherService.getWeather(u.city)
-    //       weatherFuture.map(w => Ok(views.html.userHome(u,w)))
-    //     case None => Future(Unauthorized("Oops, you accout is error"))
-    //   }
-    // }.getOrElse {
-    //     Future(Unauthorized("Oops, you accout is error"))
-    // }
+    val u = request.user
+    val weatherFuture = weatherService.getWeather(u.city)
+    weatherFuture.map(w => Ok(views.html.userHome(u,w)))
   }
 
   def toChatPage = Action{ implicit request:Request[AnyContent] =>
@@ -203,22 +187,22 @@ class UserController @Inject()(
     new scala.collection.immutable.HashMap ++ errors
   }
 
-  // def UserAction = new ActionRefiner[Request,UserRequest] {
-  //   def executionContext = implicitly[ExecutionContext]
-  //   def refine[A](input:Request[A]) =  {
-  //     input.session.get("userId").map { id =>
-  //       userService.queryUserById(id.toInt)
-  //       .map{
-  //         case Some(u) =>
-  //           Right(UserRequest(u,input))
-  //         case None =>
-  //           Left(Forbidden)
-  //       }
-  //     }.getOrElse {
-  //       Future(Left(Forbidden))
-  //     }
-  //   }
-  // }
+  def userAction2 = new ActionRefiner[Request,UserRequest] {
+    def executionContext = implicitly[ExecutionContext]
+    def refine[A](input:Request[A]) =  {
+      input.session.get("userId").map { id =>
+        userService.queryUserById(id.toInt)
+        .map{
+          case Some(u) =>
+            Right(UserRequest(u,input))
+          case None =>
+            Left(Forbidden("user is not exsit"))
+        }
+      }.getOrElse {
+        Future(Left(Forbidden("please login in first")))
+      }
+    }
+  }
 
 
 }

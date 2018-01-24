@@ -1,14 +1,5 @@
 reload
 compile
-reload
-compile
-run
-reload
-compile
-reload
-compile
-reload
-compile
 run
 reload
 compile
@@ -498,3 +489,12 @@ compile
 reload
 compile
 run
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
