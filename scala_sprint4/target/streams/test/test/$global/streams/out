@@ -3,7 +3,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunner for org.scalacheck.ScalaCheckFramework produced 0 initial tasks for 0 tests.[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunner for org.scalatest.tools.Framework produced 1 initial tasks for 1 tests.[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(TestTool, sbt.ForkMain$SubclassFingerscan@16039e22, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(test.TestTool, sbt.ForkMain$SubclassFingerscan@667a58a9, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mTestTool:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mA MD5 method[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should executed right[0m[0m
@@ -29,16 +29,18 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- should equal Hangzhou[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mA Kelvin 280.32 transform centigrade[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should equal 7.17C[0m[0m
-[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 12 events.[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mA method ruturn a tuple with boolean and String type[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should equal any Boolean and String type[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 13 events.[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunner for com.novocode.junit.JUnitFramework produced 0 initial tasks for 0 tests.[0m
 [0m[[0m[0mdebug[0m] [0m[0mSummary for ScalaCheck not available.[0m
 [0m[[0m[0minfo[0m] [0m[0mScalaTest[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 2 seconds, 352 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 12[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 second, 500 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 13[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 12, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 13, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mSummary for JUnit not available.[0m
-[0m[[0m[0minfo[0m] [0m[0mPassed: Total 12, Failed 0, Errors 0, Passed 12[0m
+[0m[[0m[0minfo[0m] [0m[0mPassed: Total 13, Failed 0, Errors 0, Passed 13[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	TestTool[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test.TestTool[0m

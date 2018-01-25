@@ -1,4 +1,5 @@
 
+package test
 import org.scalatest.{Matchers, FlatSpec}
 import org.scalatest.prop.{PropertyChecks,GeneratorDrivenPropertyChecks}
 import org.scalacheck.Gen
@@ -58,5 +59,11 @@ class TestTool extends FlatSpec{
     val cal = Tools.kelvin2Centigrade(k)
     val target = "7.17"
     assert(target==cal)
+  }
+
+  "A method ruturn a tuple with boolean and String type" should "equal any Boolean and String type" in {
+    val a = (false,"345")
+    assert(Tools.giveType(a) == Tools.giveType(TupleTest.typleReturnMethod("s")))
+    assert("s" equals(TupleTest.typleReturnMethod("s")._2))
   }
 }

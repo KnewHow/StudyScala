@@ -23,6 +23,7 @@ import play.api.data.validation.Constraints._
 import akka.stream.scaladsl._
 
 
+
 import services._
 import models._
 import tools._
@@ -31,6 +32,7 @@ import exceptions._
 class UserController @Inject()(
   cc:ControllerComponents,
   userService:UserSerice,
+
   weatherService:WeatherService,
   config: Configuration,
   ec: ExecutionContext,
@@ -88,8 +90,12 @@ class UserController @Inject()(
 
 
     val userinfo = request.body.dataParts
-    val map = checkFormParameters(userinfo)
-    val user = new User(
+    val errors = checkRegisterParameter(userinfo)
+    println(errors)
+    if(errors._1){
+      Future(Forbidden(errors._2))
+    }else{
+      val user = new User(
         1,
         userinfo.get("username").get.mkString,
         Tools.MD5(userinfo.get("password").get.mkString),
@@ -98,12 +104,14 @@ class UserController @Inject()(
         userinfo.get("city").get.mkString,
         new Date(),
         new Date()
-    )
+      )
       val futureId =  userService.register(user)
       // Ok(views.html.registerSuccess("Congratulation! Register Success"))
       futureId map(
         id => Ok(views.html.registerSuccess("Congratulation! Register Success"))
       )
+
+    }
 
   }
 
@@ -159,22 +167,46 @@ class UserController @Inject()(
     println("token= "+token)
   }
 
+  def checkRegisterParameter(userinfo:scala.Predef.Map[String, Seq[String]]):(Boolean,String)={
+    val username = userinfo.get("username").get.mkString
+    val password =  userinfo.get("password").get.mkString
+    val email = userinfo.get("email").get.mkString
+
+    var isErr = false
+    var errorMsg = ""
+
+    if(!Tools.isUsername(username)){
+      errorMsg += "username must is 6-12 number and alphabet,"
+      isErr = true
+    }
+    if(!Tools.isPassword(password)){
+      errorMsg += "password  must is 6-12 number and alphabet,"
+      isErr = true
+    }
+
+    if(!Tools.isEmail(email)){
+      errorMsg += "email  must be right format,"
+      isErr = true
+    }
+    (isErr,errorMsg)
+  }
+
   def checkFormParameters(userinfo:scala.Predef.Map[String, Seq[String]]):scala.collection.immutable.Map[String,String] ={
 
     val username = userinfo.get("username").get.mkString
     val password =  userinfo.get("password").get.mkString
     val email = userinfo.get("email").get.mkString
     val errors = new  scala.collection.mutable.HashMap[String,String]
-      if(!Tools.isUsername(username)){
-        errors.put("usernameError","username must is 6-12 number and alphabet")
-      }
-      if(!Tools.isPassword(password)){
-        errors.put("passwordError","password  must is 6-12 number and alphabet")
-      }
+    if(!Tools.isUsername(username)){
+      errors.put("usernameError","username must is 6-12 number and alphabet")
+    }
+    if(!Tools.isPassword(password)){
+      errors.put("passwordError","password  must is 6-12 number and alphabet")
+    }
 
-      if(!Tools.isEmail(email)){
-        errors.put("emailError","email  must be right format")
-      }
+    if(!Tools.isEmail(email)){
+      errors.put("emailError","email  must be right format")
+    }
 
     //form data show
     if(!errors.isEmpty){

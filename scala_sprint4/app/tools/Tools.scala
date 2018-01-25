@@ -46,4 +46,6 @@ object  Tools{
     val b2 = BigDecimal("273.15")
     (b1-b2).toString
   }
+
+  def giveType[T: Manifest](t: T): Manifest[T] = manifest[T]
 }

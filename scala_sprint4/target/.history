@@ -1,10 +1,5 @@
 reload
 compile
-run
-reload
-compile
-reload
-compile
 reload
 compile
 reload
@@ -498,3 +493,8 @@ run
 compile
 run
 compile
+run
+compile
+test
+compile
+run
