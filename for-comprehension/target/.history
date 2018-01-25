@@ -1,0 +1,11 @@
+test
+run
+compile
+run
+reload
+run
+test
+compile
+reload
+compile
+test

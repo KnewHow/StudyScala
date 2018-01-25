@@ -1,0 +1,9 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mForComprehensionTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mA for comprehension[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should statify[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAnother for comprehension[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should statify[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mA map comprehension[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should statify[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mA flatMap[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should statisfy[0m[0m
