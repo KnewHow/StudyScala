@@ -1,1 +1,1 @@
-["Main","ShowAndThen","ShowFallbacktoDemo","ShowTradeFuture"]
+["Main","ShowAndThen","ShowFallbacktoDemo","ShowForComprehension","ShowTradeFuture","block.ShowInsideBlock","block.ShowOutSideBlock","exceptions.ShowExecutionException","exceptions.ShowNonLocalReturnControl","projections.ShowFailProjection","promise.ShowPromise"]
