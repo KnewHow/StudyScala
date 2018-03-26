@@ -1,5 +1,7 @@
 [0m[[0m[0minfo[0m] [0m[0mPackaging /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/futureandpromise_2.12-1.0.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	promise/CombinatorShow.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/promise/CombinatorShow.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	ShowFallbacktoDemo.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/ShowFallbacktoDemo.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	promise/ProducerAndConsumerService.class[0m
@@ -8,6 +10,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/ShowTradeFuture$$anonfun$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	exceptions/ShowNonLocalReturnControl.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/exceptions/ShowNonLocalReturnControl.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	exceptions/ShowExecutionException$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/exceptions/ShowExecutionException$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	ShowFallbacktoDemo$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/ShowFallbacktoDemo$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	promise/ShowPromise$.class[0m
@@ -30,12 +34,16 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/block/ShowOutSideBlock$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	block/ShowInsideBlock$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/block/ShowInsideBlock$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	promise/CombinatorShow$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/promise/CombinatorShow$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	promise/ShowPromise$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/promise/ShowPromise$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	User.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/User.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	FutureDemo$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/FutureDemo$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	promise/CombinatorShow$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/promise/CombinatorShow$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	ShowAndThen$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/futureAndPromise/target/scala-2.12/classes/ShowAndThen$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	block/ShowInsideBlock.class[0m

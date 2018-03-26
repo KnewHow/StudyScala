@@ -7,10 +7,17 @@ import scala.runtime.NonLocalReturnControl
 
 object ShowExecutionException extends App{
 
+
+  produceFuture onComplete{
+    case Success(u) => println(u)
+    case Failure(u) => println(u)
+  }
+
    def produceFuture:Future[String]={
-    Future.successful(
-      "nonLocalReturnControl"
-    )
-    throw new NonLocalReturnControl[String]("knewHow","jipaokeji")
+     Future{
+       "lala"
+       // throw new NonLocalReturnControl[String]("knewHow","jipaokeji")
+       throw new Exception("lala")
+    }
   }
 }

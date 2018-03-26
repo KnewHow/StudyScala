@@ -1,0 +1,15 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /Users/how/project/studyScala/workspace/scoreprojectsurvey/target/scala-2.12/hello-world_2.12-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/scoreprojectsurvey/target/scala-2.12/classes/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	NickNameWidthSurvey$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/scoreprojectsurvey/target/scala-2.12/classes/NickNameWidthSurvey$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/scoreprojectsurvey/target/scala-2.12/classes/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/scoreprojectsurvey/target/scala-2.12/classes/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	NickNameWidthSurvey.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/scoreprojectsurvey/target/scala-2.12/classes/NickNameWidthSurvey.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	NickNameWidthSurvey$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/how/project/studyScala/workspace/scoreprojectsurvey/target/scala-2.12/classes/NickNameWidthSurvey$delayedInit$body.class[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

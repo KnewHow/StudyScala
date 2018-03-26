@@ -1,5 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/futureAndPromise/src/main/scala/promise/ProduceAndConsumer.scala:27:17: match may not be exhaustive.[0m
-[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Failure(_)[0m
-[0m[[0m[33mwarn[0m] [0m[0m    f onComplete{[0m
-[0m[[0m[33mwarn[0m] [0m[0m                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/how/project/studyScala/workspace/futureAndPromise/src/main/scala/promise/Combinator.scala:16:5: a pure expression does nothing in statement position; multiline expressions might require enclosing parentheses[0m
+[0m[[0m[33mwarn[0m] [0m[0m    "456"[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

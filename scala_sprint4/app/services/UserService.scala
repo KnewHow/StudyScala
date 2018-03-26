@@ -32,7 +32,7 @@ class UserSerice{
   def queryUserById(id:Int):Future[Option[User]]={
     val result = ctx.run {query[User].filter(_.id == lift(id))}
     result map{ list =>
-      Option[User](list.apply(0))
+      list.headOption
     }
   }
 }
